@@ -2,6 +2,7 @@ package by.aston.task2;
 
 import by.aston.task2.collections.MyArrayList;
 import by.aston.task2.collections.MyLinkedList;
+import by.aston.task2.interfaces.IList;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,9 +13,9 @@ public class Task2 {
     }
 
     public static void build() {
-        MyArrayList<Integer> arrayList = new MyArrayList<>(Arrays.asList(2, 1, 3, 6, 5, 4), Integer.class);
-        MyLinkedList<Integer> linkedList = new MyLinkedList<>(Arrays.asList(2, 1, 3, 6, 5, 4));
-        System.out.println("--Collections--");
+        IList<Integer> arrayList = new MyArrayList<>(Arrays.asList(2, 1, 3, 6, 5, 4), Integer.class);
+        IList<Integer> linkedList = new MyLinkedList<>(Arrays.asList(2, 1, 3, 6, 5, 4));
+        System.out.println("--My collections--");
         showCollections(arrayList, linkedList);
 
         System.out.println("--Add one element--");
@@ -42,7 +43,7 @@ public class Task2 {
         showCollections(arrayList, linkedList);
     }
 
-    private static void showCollections(MyArrayList<Integer> arrayList, MyLinkedList<Integer> linkedList) {
+    private static void showCollections(IList<Integer> arrayList, IList<Integer> linkedList) {
         System.out.println("ArrayList: " + arrayList);
         System.out.println("LinkedList: " + linkedList);
     }
